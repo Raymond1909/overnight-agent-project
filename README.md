@@ -18,19 +18,23 @@ agent 跑长任务翻车，通常不是模型不行，是下面四件事没做�
 ## 目录
 
 ```
-SKILL.md                        # 主文件：何时用、四不变式、工作流、失败模式
-references/
-├── 01-templates.md             # TASKS / PROGRESS / 夜间提示词 / 交接 / 早间清单
-├── 02-verification-gates.md    # check.py 骨架、thresholds.json、断言设计、反作弊
-├── 03-git-protocol.md          # 分支、一任务一提交、回滚、bundle、云盘 .git
-├── 04-handover-and-blocked.md  # blocked 三条件、交接字段、时间戳纪律
-├── 05-llm-judging.md           # LLM 逐条判定、漂移测量、人定标准
-└── 06-platform-notes.md        # Windows 编码、Office 抽取、云盘 I/O、防睡眠
+├── SKILL.md                      # 主文件：何时用、四不变式、工作流、失败模式
+└── references/
+    ├── 01-templates.md           # TASKS / PROGRESS / 夜间提示词 / 交接 / 早间清单
+    ├── 02-verification-gates.md  # check.py 骨架、thresholds.json、断言设计、反作弊
+    ├── 03-git-protocol.md        # 分支、一任务一提交、回滚、bundle、云盘 .git
+    ├── 04-handover-and-blocked.md  # blocked 三条件、交接字段、时间戳纪律
+    ├── 05-llm-judging.md         # LLM 逐条判定、漂移测量、人定标准
+    └── 06-platform-notes.md      # Windows 编码、Office 抽取、云盘 I/O、防睡眠
 ```
 
 ## 安装
 
-技能就是一组 Markdown，没有依赖。把它放到所用 agent 能读到的地方即可。
+技能就是一组 Markdown，没有依赖。把它放到所用 agent 能读到的地方即可。先克隆仓库：
+
+```bash
+git clone https://github.com/Raymond1909/overnight-agent-project.git
+```
 
 **Claude Code**
 
@@ -44,7 +48,7 @@ cp -r overnight-agent-project ~/.claude/skills/overnight-agent-project
 cp -r overnight-agent-project ~/.codex/skills/overnight-agent-project
 ```
 
-或在该项目的 `AGENTS.md` 里加一行引用：`- 长任务流程见 .agent-skills/overnight-agent-project/SKILL.md`。
+或在该项目的 `AGENTS.md` 里加一行引用，指向你实际放置的位置：`- 长任务流程见 <放置路径>/SKILL.md`。
 
 **Cursor**
 
